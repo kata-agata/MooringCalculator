@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="bargeDataLayout" prefHeight="400.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="203.0" layoutY="14.0" text="Barge and Quay Data">
+         <font>
+            <Font name="Trebuchet MS Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="70.0" text="Barge data:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <VBox fx:id="bargeDataInput" layoutX="86.0" layoutY="96.0" AnchorPane.bottomAnchor="204.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="96.0">
+         <children>
+            <HBox layoutX="87.0" layoutY="96.0">
+               <children>
+                  <Label layoutX="87.0" layoutY="100.0" minWidth="40.0" text="Name:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="bargeName" layoutX="136.0" layoutY="96.0" prefHeight="25.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="87.0" layoutY="121.0">
+               <children>
+                  <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Length:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="bargeLength" prefHeight="25.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="87.0" layoutY="145.0">
+               <children>
+                  <Label layoutX="87.0" layoutY="149.0" minWidth="40.0" text="Beam:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="bargeBeam" prefHeight="25.0" prefWidth="135.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="86.0" layoutY="171.0">
+               <children>
+                  <Label layoutX="86.0" layoutY="175.0" minWidth="40.0" text="Height:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="bargeHeight" prefHeight="25.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="66.0" layoutY="214.0" text="Quay data:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <VBox fx:id="QuayDataInput1" layoutX="49.0" layoutY="242.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="330.0">
+         <children>
+            <HBox layoutX="87.0" layoutY="96.0">
+               <children>
+                  <Label layoutX="87.0" layoutY="100.0" minWidth="40.0" text="Name:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="quayName" layoutX="136.0" layoutY="96.0" prefHeight="25.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="87.0" layoutY="121.0">
+               <children>
+                  <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Fender span" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="fenderSpan" prefHeight="25.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -13,25 +13,26 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class MainApp extends Application {
 
-        private ConfigurableApplicationContext context;
+    private ConfigurableApplicationContext context;
     private Parent rootNode;
-    
-        @Override
+
+    @Override
     public void init() throws Exception {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(MainApp.class);
         context = builder.run(getParameters().getRaw().toArray(new String[0]));
- 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Scene.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainScene.fxml"));
         loader.setControllerFactory(context::getBean);
         rootNode = loader.load();
     }
+
     @Override
     public void start(Stage stage) throws Exception {
-        
+
         Scene scene = new Scene(rootNode);
         scene.getStylesheets().add("/styles/Styles.css");
-        
-        stage.setTitle("JavaFX and Maven");
+
+        stage.setTitle("Mooring calculator");
         stage.setScene(scene);
         stage.show();
     }

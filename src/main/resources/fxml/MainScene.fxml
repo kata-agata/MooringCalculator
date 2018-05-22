@@ -13,7 +13,6 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <ListView fx:id="mainListView" layoutX="-19.0" layoutY="51.0" onMouseClicked="#handleMouseClick" prefHeight="766.0" prefWidth="201.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button fx:id="testButton" layoutX="75.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Click" />
                </children>
             </AnchorPane>
           <AnchorPane fx:id="calculatorLayout" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />

@@ -8,25 +8,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="bargeDataLayout" prefHeight="400.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" fx:id="bargeDataLayout" prefHeight="400.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trend.mooringcalculator.BargeController">
    <children>
       <Label layoutX="203.0" layoutY="14.0" text="Barge and Quay Data">
          <font>
             <Font name="Trebuchet MS Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="70.0" text="Barge data:">
+      <Label layoutX="50.0" layoutY="69.0" text="Barge data:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <VBox fx:id="bargeDataInput" layoutX="86.0" layoutY="96.0" AnchorPane.bottomAnchor="204.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="96.0">
+      <VBox fx:id="bargeDataInput" layoutX="50.0" layoutY="100.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="100.0">
          <children>
             <HBox layoutX="87.0" layoutY="96.0">
                <children>
                   <Label layoutX="87.0" layoutY="100.0" minWidth="40.0" text="Name:" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="bargeName" layoutX="136.0" layoutY="96.0" prefHeight="25.0" prefWidth="135.0" />
+                  <TextField fx:id="bargeName" prefHeight="25.0" prefWidth="135.0" />
                </children>
             </HBox>
             <HBox layoutX="87.0" layoutY="121.0">
@@ -54,14 +54,32 @@
                   <TextField fx:id="bargeHeight" prefHeight="25.0" prefWidth="135.0" />
                </children>
             </HBox>
+            <HBox>
+               <children>
+                  <Label layoutX="87.0" layoutY="149.0" minWidth="40.0" text="Mooring side:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <ComboBox fx:id="mooringSide" prefWidth="135.0" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label layoutX="87.0" layoutY="149.0" minWidth="40.0" text="Trim:" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="bargeTrim" prefHeight="25.0" prefWidth="135.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <Label layoutX="66.0" layoutY="214.0" text="Quay data:">
+      <Label layoutX="66.0" layoutY="282.0" text="Quay data:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <VBox fx:id="QuayDataInput1" layoutX="49.0" layoutY="242.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="330.0">
+      <VBox fx:id="QuayDataInput1" layoutX="50.0" layoutY="310.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="330.0">
          <children>
             <HBox layoutX="87.0" layoutY="96.0">
                <children>
@@ -79,5 +97,7 @@
             </HBox>
          </children>
       </VBox>
+      <Button fx:id="addNewBarge" layoutX="290.0" layoutY="100.0" mnemonicParsing="false" text="Add new barge" />
+      <Button fx:id="confirmBarge" layoutX="227.0" layoutY="379.0" mnemonicParsing="false" onAction="#bargeDataConfirm" text="Confirm" />
    </children>
 </AnchorPane>

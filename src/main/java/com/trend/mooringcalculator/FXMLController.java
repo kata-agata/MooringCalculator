@@ -7,8 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,27 +27,42 @@ public class FXMLController {
 
     @FXML
     public void initialize() {
-        mainListView.setItems(mainListViewItems); /*adding items to lisView on initialize*/
+        mainListView.setItems(mainListViewItems);
+        /*adding items to lisView on initialize*/
     }
 
-    @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("/fxml/BargeDataLayout.fxml"));
-        calculatorLayout.getChildren().setAll(pane);
-    } /*test loading new fxml file into scene*/
 
-    
-    /**********************Handle click on item in ListView **************************/
+    /**
+     * Handle click on item in ListView
+     */
     @FXML
-    public void handleMouseClick(MouseEvent arg0) throws IOException { 
+    public void handleMouseClick(MouseEvent arg0) throws IOException {
         System.out.println("clicked on " + mainListView.getSelectionModel().getSelectedItem());
 
-        String clickedItem = mainListView.getSelectionModel().getSelectedItem(); /*get string of clicked item*/
+        String clickedItem = mainListView.getSelectionModel().getSelectedItem();
+        /*get string of clicked item*/
+        String fxmlSrc = null;
         if ("Barge and quay data".equals(clickedItem)) {
             System.out.println("kliknales 1");
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/fxml/BargeDataLayout.fxml")); /*loading new scene*/
-            calculatorLayout.getChildren().setAll(pane);
+            fxmlSrc = "/fxml/BargeDataLayout.fxml";
+        } else if ("Enviromental data".equals(clickedItem)) {
+            fxmlSrc = "/fxml/EnviromentalDataLayout.fxml";
+        } else if ("Mooring Points".equals(clickedItem)) {
+            fxmlSrc = "/fxml/MooringPointsLayout.fxml";
+        } else if ("Mooring Lines".equals(clickedItem)) {
+            fxmlSrc = "/fxml/MooringLinesLayout.fxml";
         }
+
+        AnchorPane pane = FXMLLoader.load(getClass().getResource(fxmlSrc));
+        /*loading new scene*/
+        
+        calculatorLayout.getChildren().setAll(pane);
+        
     }
+    
+
+    
+//    @Autowired
+//    public BargeRepository bargeRepository;
 
 }

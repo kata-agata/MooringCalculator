@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="bargeDataLayout" prefHeight="400.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trend.mooringcalculator.BargeController">
+<AnchorPane id="AnchorPane" fx:id="bargeDataLayout" prefHeight="400.0" prefWidth="605.0" stylesheets="@../styles/bargeLayoutStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trend.mooringcalculator.BargeController">
    <children>
       <Label layoutX="203.0" layoutY="14.0" text="Barge and Quay Data">
          <font>
@@ -26,21 +28,21 @@
                <children>
                   <Label layoutX="87.0" layoutY="100.0" minWidth="40.0" text="Name:" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="bargeName" prefHeight="25.0" prefWidth="135.0" />
+                  <TextField fx:id="bargeName" prefHeight="25.0" prefWidth="135.0" styleClass="textField" />
                </children>
             </HBox>
             <HBox layoutX="87.0" layoutY="121.0">
                <children>
                   <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Length:" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="bargeLength" prefHeight="25.0" prefWidth="135.0" />
+                  <TextField fx:id="bargeLength" prefHeight="25.0" prefWidth="135.0" styleClass="textField" />
                </children>
             </HBox>
             <HBox layoutX="87.0" layoutY="145.0">
                <children>
                   <Label layoutX="87.0" layoutY="149.0" minWidth="40.0" text="Beam:" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="bargeBeam" prefHeight="25.0" prefWidth="135.0">
+                  <TextField fx:id="bargeBeam" prefHeight="25.0" prefWidth="135.0" styleClass="textField">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -51,7 +53,7 @@
                <children>
                   <Label layoutX="86.0" layoutY="175.0" minWidth="40.0" text="Height:" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="bargeHeight" prefHeight="25.0" prefWidth="135.0" />
+                  <TextField fx:id="bargeHeight" prefHeight="25.0" prefWidth="135.0" styleClass="textField" />
                </children>
             </HBox>
             <HBox>
@@ -65,7 +67,7 @@
                <children>
                   <Label layoutX="87.0" layoutY="149.0" minWidth="40.0" text="Trim:" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="bargeTrim" prefHeight="25.0" prefWidth="135.0">
+                  <TextField fx:id="bargeTrim" prefHeight="25.0" prefWidth="135.0" styleClass="textField">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -97,7 +99,47 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="addNewBarge" layoutX="290.0" layoutY="100.0" mnemonicParsing="false" text="Add new barge" />
       <Button fx:id="confirmBarge" layoutX="227.0" layoutY="379.0" mnemonicParsing="false" onAction="#bargeDataConfirm" text="Confirm" />
+      <Label fx:id="formInfo" layoutX="41.0" layoutY="411.0" prefHeight="60.0" prefWidth="244.0" wrapText="true" />
+      <TextFlow prefHeight="200.0" prefWidth="200.0" />
+      <Pane layoutX="348.0" layoutY="100.0">
+         <children>
+            <Label prefWidth="200.0" text="Barge you choose:" />
+            <VBox layoutY="36.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <HBox layoutX="370.0" layoutY="117.0" prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="370.0" layoutY="117.0" prefHeight="17.0" prefWidth="50.0" text="Name" />
+                        <Label layoutX="432.0" layoutY="117.0" prefHeight="17.0" prefWidth="150.0" text="Label" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="370.0" layoutY="134.0" prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="370.0" layoutY="134.0" prefWidth="50.0" text="Length" />
+                        <Label layoutX="432.0" layoutY="134.0" prefWidth="150.0" text="Label" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="370.0" layoutY="151.0" prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="370.0" layoutY="151.0" prefWidth="50.0" text="Height" />
+                        <Label layoutX="432.0" layoutY="151.0" prefWidth="150.0" text="Label" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="370.0" layoutY="168.0" prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="370.0" layoutY="168.0" prefWidth="50.0" text="Trim" />
+                        <Label layoutX="432.0" layoutY="168.0" prefWidth="150.0" text="Label" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="370.0" layoutY="192.0" prefHeight="20.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="370.0" layoutY="192.0" prefWidth="50.0" text="Beam" />
+                        <Label layoutX="432.0" layoutY="192.0" prefWidth="150.0" text="Label" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

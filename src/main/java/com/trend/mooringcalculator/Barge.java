@@ -22,7 +22,21 @@ public class Barge {
 
     private Double beam;
 
-    private Double depth;
+    private Double height;
+    
+    private Double trim;
+
+    public Double getTrim() {
+        return trim;
+    }
+
+    public void setTrim(Double trim) {
+        this.trim = trim;
+    }
+
+    public Barge() {
+    }
+    
 
     public Integer getId() {
         return id;
@@ -56,12 +70,12 @@ public class Barge {
         this.beam = beam;
     }
 
-    public Double getDepth() {
-        return depth;
+    public Double getHeight() {
+        return height;
     }
 
-    public void setDepth(Double depth) {
-        this.depth = depth;
+    public void setHeight(Double height) {
+        this.height = height;
     }
 
     @Override
@@ -71,7 +85,7 @@ public class Barge {
                 + ", name='" + name + '\''
                 + ", length='" + length + '\''
                 + ", beam=" + beam
-                + ", depth=" + depth
+                + ", depth=" + height
                 + '}';
     }
 }

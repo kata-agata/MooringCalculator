@@ -11,11 +11,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<!--<Tab fx:id="cargoTab" text="Cargo Data" xmlns:fx="http://javafx.com/fxml/1" 
-     xmlns="http://javafx.com/javafx/8" >
-    <content>-->
-<!--    </content>
-</Tab>-->
+<Tab fx:id="cargoTab" text="Cargo Data" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trend.mooringcalculator.controllers.CargoEnvTabController">
+    <content>
+
 
 <AnchorPane id="AnchorPane" fx:id="cargoDataLayout" prefHeight="400.0" prefWidth="605.0" stylesheets="@../styles/bargeLayoutStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -192,3 +190,5 @@
       </Pane>
    </children>
 </AnchorPane>
+    </content>
+</Tab>

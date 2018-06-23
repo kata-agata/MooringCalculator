@@ -10,10 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-
-<Tab fx:id="bargeTab" text="Barge Data" xmlns:fx="http://javafx.com/fxml/1" 
-     xmlns="http://javafx.com/javafx/8" >
+<Tab fx:id="bargeTab" text="Barge Data" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trend.mooringcalculator.controllers.BargeTabController">
     <content>
         <AnchorPane id="AnchorPane" fx:id="bargeDataLayout" stylesheets="@../styles/bargeLayoutStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <children>
@@ -150,4 +147,3 @@
         </AnchorPane>
     </content>
 </Tab>
-

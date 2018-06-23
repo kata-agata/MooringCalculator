@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.trend.mooringcalculator;
+package com.trend.mooringcalculator.controllers;
 
+import com.trend.mooringcalculator.Barge;
 import javafx.beans.binding.Bindings;
 import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
@@ -12,12 +13,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author agataj
  */
-public class BargeController {
+@Component
+public class BargeTabController {
 
     @FXML
     private TextField bargeName;

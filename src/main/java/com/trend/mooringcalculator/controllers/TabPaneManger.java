@@ -8,26 +8,32 @@ import org.springframework.stereotype.Component;
 @Component
 public class TabPaneManger implements FXMLController{
 
-//    private final ConsoleTabController consoleTabController;
-//    private final LoggerTabController loggerTabController;
-//    @FXML  private Tab tabConsole; 
-//    @FXML  private Tab tabLogger;
-//
-//    @Autowired
-//    public TabPaneManger(ConsoleTabController consoleTabController, LoggerTabController loggerTabController) {
-//        this.consoleTabController = consoleTabController;
-//        this.loggerTabController = loggerTabController;
-//    }
+    private final BargeTabController bargeTabController;
+   private final CargoEnvTabController cargoEnvTabController;
+   private final ForcesTabController forcesTabController;
+    @FXML  private Tab bargeTab; 
+    @FXML  private Tab cargoEnvTab;
+    @FXML private Tab forcesTab;
+
+    @Autowired
+    public TabPaneManger(BargeTabController bargeTabController, CargoEnvTabController cargoEnvTabController, ForcesTabController forcesTabController) {
+        this.bargeTabController = bargeTabController;
+        this.cargoEnvTabController = cargoEnvTabController;
+        this.forcesTabController = forcesTabController;
+    }
     
     @Override
     public void initialize() {
     }
 
-//    public ConsoleTabController getConsoleTabController() {
-//        return consoleTabController;
-//    }
-//
-//    public LoggerTabController getLoggerTabController() {
-//        return loggerTabController;
-//    }
+    public BargeTabController getBargeTabController() {
+        return bargeTabController;
+    }
+
+    public CargoEnvTabController getCargoEnvTabController() {
+        return cargoEnvTabController;
+    }
+    public ForcesTabController getForcesTabController(){
+        return forcesTabController;
+    }
 }

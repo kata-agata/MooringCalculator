@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+
+<!--<AnchorPane prefHeight="400.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>-->
+                <Tab fx:id="cargoTab" text="Cargo Data" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+                fx:controller="com.trend.mooringcalculator.controllers.CargoEnvTabController">
+                    <content>
+                        <AnchorPane id="AnchorPane" fx:id="cargoDataLayout" prefHeight="384.0" prefWidth="1036.0" stylesheets="@../styles/bargeLayoutStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                            <children>
+                                <Label layoutX="296.0" layoutY="2.0" text="Cargo and Environmental Data">
+                                    <font>
+                                        <Font name="Trebuchet MS Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="21.0" layoutY="198.0" text="Cargo data:" underline="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="21.0" layoutY="14.0" text="Environmental data:" underline="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <VBox fx:id="QuayDataInput1" fillWidth="false" layoutX="19.0" layoutY="40.0" maxWidth="350.0" prefHeight="150.0" prefWidth="350.0" scaleShape="false" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="528.0">
+                                    <children>
+                                        <HBox layoutX="87.0" layoutY="96.0" maxWidth="363.0" minWidth="280.0" prefHeight="25.0" prefWidth="350.0">
+                                            <children>
+                                                <Label layoutX="87.0" layoutY="100.0" minWidth="40.0" text="Wind velocity Vw:" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="vw" alignment="CENTER_RIGHT" layoutX="136.0" layoutY="96.0" prefHeight="25.0" prefWidth="70.0" text="20" />
+                                                <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m/s" />
+                                            </children>
+                                        </HBox>
+                                        <HBox layoutX="87.0" layoutY="121.0" maxWidth="356.0" minWidth="280.0" prefHeight="25.0" prefWidth="350.0">
+                                            <children>
+                                                <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Head curren velocity Vc" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="vc" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0,5" />
+                                                <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m/s" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="333.0" minWidth="280.0" prefHeight="25.0" prefWidth="333.0">
+                                            <children>
+                                                <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Significant wave height Hs" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="hs" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="5" />
+                                                <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="334.0" minWidth="280.0" prefHeight="25.0" prefWidth="334.0">
+                                            <children>
+                                                <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Water desity watd" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="waterDensity" prefHeight="25.0" prefWidth="70.0" text="1,025" />
+                                                <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="t/m3" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="331.0" minWidth="280.0" prefHeight="25.0" prefWidth="331.0">
+                                            <children>
+                                                <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Air desity aird" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="airDensity" prefHeight="24.0" prefWidth="71.0" text="0,00125" textAlignment="RIGHT" />
+                                                <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="t/m3" />
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="341.0" minWidth="280.0" prefHeight="25.0" prefWidth="341.0">
+                                            <children>
+                                                <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="G-force g" />
+                                                <Region HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="g" prefHeight="25.0" prefWidth="73.0" text="9,81" textAlignment="RIGHT" />
+                                                <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m/s2" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                        <Pane layoutX="13.0" layoutY="220.0">
+                           <children>
+                                          <TextField fx:id="cargoName" layoutY="119.0" prefHeight="25.0" prefWidth="80.0" promptText="Name" styleClass="textField" />
+                                      <TableView fx:id="cargoTableView" prefHeight="119.0" prefWidth="421.0">
+                                          <columns>
+                                              <TableColumn fx:id="cargoNameColumn" prefWidth="75.0" text="Name" />
+                                              <TableColumn fx:id="cargoTAreaColumn" prefWidth="75.0" text="Area T" />
+                                              <TableColumn fx:id="cargoLAreaColumn" prefWidth="75.0" text="Area L" />
+                                              <TableColumn fx:id="cargoShapeCoefColumn" prefWidth="75.0" text="Shape coef" />
+                                          </columns>
+                                      </TableView>
+                              <TextField fx:id="cargoShapeCoef" layoutX="238.0" layoutY="119.0" prefHeight="25.0" prefWidth="86.0" promptText="Shape coef." />
+                              <Button fx:id="cargoAddButton" layoutX="324.0" layoutY="119.0" mnemonicParsing="false" onAction="#cargoDataAdd" prefHeight="25.0" prefWidth="46.0" text="Add" />
+                              <TextField fx:id="cargoTArea" layoutX="78.0" layoutY="119.0" prefHeight="25.0" prefWidth="80.0" promptText="Area T" />
+                              <TextField fx:id="cargoLArea" layoutX="158.0" layoutY="119.0" prefHeight="25.0" prefWidth="80.0" promptText="Area L" />
+                              <Button fx:id="cargoDeleteButton" layoutX="370.0" layoutY="119.0" mnemonicParsing="false" onAction="#cargoDataDelete" text="Delete" />
+                           </children>
+                        </Pane>
+                                  <VBox layoutX="362.0" layoutY="45.0" prefHeight="74.0" prefWidth="204.0" spacing="5.0">
+                                      <children>
+                                          <HBox layoutX="370.0" layoutY="117.0" prefHeight="20.0" prefWidth="200.0">
+                                              <children>
+                                                  <Label layoutX="370.0" layoutY="117.0" prefHeight="17.0" prefWidth="50.0" text="Vw" />
+                                                  <Label fx:id="confirmedvw" layoutX="432.0" layoutY="117.0" prefHeight="17.0" prefWidth="150.0" text="confirmed vw" textAlignment="RIGHT" />
+                                              </children>
+                                          </HBox>
+                                          <HBox layoutX="370.0" layoutY="134.0" prefHeight="20.0" prefWidth="200.0">
+                                              <children>
+                                                  <Label layoutX="370.0" layoutY="134.0" prefWidth="50.0" text="Vc" />
+                                                  <Label fx:id="confirmedvc" layoutX="432.0" layoutY="134.0" prefWidth="150.0" text="cofirmed vc" textAlignment="RIGHT" />
+                                              </children>
+                                          </HBox>
+                                          <HBox layoutX="370.0" layoutY="151.0" prefHeight="20.0" prefWidth="200.0">
+                                              <children>
+                                                  <Label layoutX="370.0" layoutY="151.0" prefWidth="50.0" text="Hs" />
+                                                  <Label fx:id="confirmedhs" layoutX="432.0" layoutY="151.0" prefWidth="150.0" text="confirmed hs" textAlignment="RIGHT" />
+                                              </children>
+                                          </HBox>
+                                      </children>
+                                  </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+<!--            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>-->

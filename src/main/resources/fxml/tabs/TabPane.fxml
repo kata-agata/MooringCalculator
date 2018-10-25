@@ -16,7 +16,8 @@
         <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
                 <fx:include fx:id="bargeTab" source="BargeTab.fxml" />
-                <fx:include fx:id="cargoTab" source="CargoEnvTab.fxml" />
+                <fx:include fx:id="cargoTab" source="CargoTab.fxml" />
+                <fx:include fx:id="forcesTab" source="ForcesTab.fxml" />
             </tabs>
         </TabPane>
     </children>

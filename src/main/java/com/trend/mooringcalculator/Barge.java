@@ -9,51 +9,33 @@ package com.trend.mooringcalculator;
  *
  * @author agataj
  */
+public final class Barge extends WindAreaObject {
 
-
-public class Barge {
-
-
-    private Integer id;
-
-    private String name;
-
+    private static Barge INSTANCE; //barge class is Singleton => only one can exist
     private Double length;
-
     private Double beam;
-
     private Double height;
-    
-    private Double trim;
+    private Double draught;
 
-    public Double getTrim() {
-        return trim;
+    private Barge() {
     }
 
-    public void setTrim(Double trim) {
-        this.trim = trim;
+    public static Barge getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new Barge();
+        }
+        return INSTANCE;
     }
 
-    public Barge() {
-    }
-    
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+//    public Barge(String name, Double length, Double beam, Double height, Double draught, Double shapeCoef) {
+//        super(name, shapeCoef); // contructor from parent
+//        this.length = length;
+//        this.beam = beam;
+//        this.height = height;
+//        this.draught = draught;
+//        calculateWindAreaT(length, height, draught);
+//        calculateWindAreaL(beam, height, draught);
+//    }
     public Double getLength() {
         return length;
     }
@@ -78,14 +60,17 @@ public class Barge {
         this.height = height;
     }
 
+    public Double getDraught() {
+        return draught;
+    }
+
+    public void setDraught(Double draught) {
+        this.draught = draught;
+    }
+
     @Override
     public String toString() {
-        return "Barge{"
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", length='" + length + '\''
-                + ", beam=" + beam
-                + ", depth=" + height
-                + '}';
+        return "Barge{" + "name=" + getName() + "length=" + length + ", beam=" + beam + ", height=" + height + ", draught=" + draught + '}';
     }
+
 }

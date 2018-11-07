@@ -52,10 +52,10 @@ public class CargoEnvTabController implements Initializable {
     Button confirmCargoEnv;
     
     @FXML
-    private Label waterDensity, airDensity, g;
+    private Label waterDensityLabel, airDensityLabel, gLabel;
     
     @FXML
-    private  TextField vw,vc,hs;
+    private  TextField vwTextField,vcTextField,hsTextField;
     
 //    private final Double waterDensityValue = Double.parseDouble(waterDensity.getText());
 //    private final Double airDensityValue = Double.parseDouble(airDensity.getText());
@@ -64,6 +64,8 @@ public class CargoEnvTabController implements Initializable {
     private final ForcesTabController forcesTabController;
     private ObservableList<WindAreaObject> cargos = FXCollections.observableArrayList();
 
+    private Double waterDensity, airDensity, g, vw,vc,hs;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cargoNameColumn.setCellValueFactory(new PropertyValueFactory<WindAreaObject, String>("name"));
@@ -72,12 +74,12 @@ public class CargoEnvTabController implements Initializable {
         cargoShapeCoefColumn.setCellValueFactory(new PropertyValueFactory<WindAreaObject, Double>("shapeCoef"));
         cargoTableView.setItems(getCargo());
 
-        vw.textProperty().addListener((obs, oldText, newText) -> {
-        // do what you need with newText here, e.g.
-        forcesTabController.calculateWindForceT(3.0, 2.0, 1.0);
-        System.out.println(newText);
-    });
-        
+//        vw.textProperty().addListener((obs, oldText, newText) -> {
+//        // do what you need with newText here, e.g.
+//        forcesTabController.calculateWindForceT();
+//        System.out.println(newText);
+//    });
+      
     }
 
     @FXML
@@ -93,9 +95,15 @@ public class CargoEnvTabController implements Initializable {
         cargoLArea.clear();
         cargoTArea.clear();
         cargoShapeCoef.clear();
-
+        waterDensity = Double.parseDouble(waterDensityLabel.getText());
+        airDensity = Double.parseDouble(airDensityLabel.getText());
+        vw = Double.parseDouble(vwTextField.getText());
+        vc = Double.parseDouble(vcTextField.getText());
+        hs = Double.parseDouble(hsTextField.getText());
+        g = Double.parseDouble(gLabel.getText());
         try {
-            forcesTabController.setwindForcesTableViews(cargos);
+            System.out.println("ok");
+            forcesTabController.setwindForcesTableViews(cargos, airDensity, vw,g);
 
         } catch (Exception e) {
             e.getMessage();

@@ -39,7 +39,7 @@
                                             <children>
                                                 <Label layoutX="87.0" layoutY="100.0" minWidth="40.0" text="Wind velocity Vw:" />
                                                 <Region HBox.hgrow="ALWAYS" />
-                                                <TextField fx:id="vw" alignment="CENTER_RIGHT" layoutX="136.0" layoutY="96.0" prefHeight="25.0" prefWidth="70.0" text="20" />
+                                                <TextField fx:id="vwTextField" alignment="CENTER_RIGHT" layoutX="136.0" layoutY="96.0" prefHeight="25.0" prefWidth="70.0" text="20.0" />
                                                 <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m/s" />
                                             </children>
                                         </HBox>
@@ -47,7 +47,7 @@
                                             <children>
                                                 <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Head curren velocity Vc" />
                                                 <Region HBox.hgrow="ALWAYS" />
-                                                <TextField fx:id="vc" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0,5" />
+                                                <TextField fx:id="vcTextField" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0.5" />
                                                 <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m/s" />
                                             </children>
                                         </HBox>
@@ -55,7 +55,7 @@
                                             <children>
                                                 <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Significant wave height Hs" />
                                                 <Region HBox.hgrow="ALWAYS" />
-                                                <TextField fx:id="hs" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="5" />
+                                                <TextField fx:id="hsTextField" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="5.0" />
                                                 <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m" />
                                             </children>
                                         </HBox>
@@ -63,7 +63,7 @@
                                             <children>
                                                 <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Water desity watd" />
                                                 <Region HBox.hgrow="ALWAYS" />
-                                    <Label fx:id="waterDensity" prefHeight="25.0" prefWidth="70.0" text="1,025" />
+                                    <Label fx:id="waterDensityLabel" prefHeight="25.0" prefWidth="70.0" text="1.025" />
                                                 <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="t/m3" />
                                             </children>
                                         </HBox>
@@ -71,7 +71,7 @@
                                             <children>
                                                 <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="Air desity aird" />
                                                 <Region HBox.hgrow="ALWAYS" />
-                                    <Label fx:id="airDensity" prefHeight="24.0" prefWidth="71.0" text="0,00125" textAlignment="RIGHT" />
+                                    <Label fx:id="airDensityLabel" prefHeight="24.0" prefWidth="71.0" text="0.00125" textAlignment="RIGHT" />
                                                 <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="t/m3" />
                                             </children>
                                         </HBox>
@@ -79,7 +79,7 @@
                                             <children>
                                                 <Label layoutX="87.0" layoutY="125.0" minWidth="40.0" text="G-force g" />
                                                 <Region HBox.hgrow="ALWAYS" />
-                                    <Label fx:id="g" prefHeight="25.0" prefWidth="73.0" text="9,81" textAlignment="RIGHT" />
+                                    <Label fx:id="gLabel" prefHeight="25.0" prefWidth="73.0" text="9.81" textAlignment="RIGHT" />
                                                 <Label alignment="CENTER" minWidth="40.0" prefHeight="25.0" prefWidth="40.0" text="m/s2" />
                                             </children>
                                         </HBox>

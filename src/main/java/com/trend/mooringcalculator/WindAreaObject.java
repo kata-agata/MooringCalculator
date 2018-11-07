@@ -12,20 +12,22 @@ package com.trend.mooringcalculator;
 public class WindAreaObject {
     private Integer id;
     private String name;
-    private Double windAreaT;
-    private Double windAreaL;
+    protected Double windAreaT;//protected to access this filed via Barge (child of wao)
+    protected Double windAreaL;
     private Double shapeCoef;
     private Double windForceT;
-
-
     private Double windForceL;
     
-    public WindAreaObject(){       
+    public WindAreaObject(){     
+        this.windForceT=0.0;
+        this.windForceL=0.0;
     }
     
     public WindAreaObject(String name, Double shapeCoef){
         this.name=name;
         this.shapeCoef=shapeCoef;
+        this.windForceT=0.0;
+        this.windForceL=0.0;
     }
     
     public WindAreaObject(String name, Double windAreaT, Double windAreaL, Double shapeCoef){
@@ -33,6 +35,8 @@ public class WindAreaObject {
         this.windAreaT=windAreaT;
         this.windAreaL=windAreaL;
         this.shapeCoef=shapeCoef;
+        this.windForceT=0.0;
+        this.windForceL=0.0;
     }
 
     public Integer getId() {
@@ -59,10 +63,10 @@ public class WindAreaObject {
         this.windAreaT = windAreaT;
     }
     
-    public void setWindAreaT(Double length, Double height, Double draught){
-        this.windAreaT = length * (height - draught);
+    public void setWindAreaT() { //overidden in child method
+        this.windAreaT = 0.0;
     }
-
+    
     public Double getWindAreaL() {
         return windAreaL;
     }
@@ -71,11 +75,11 @@ public class WindAreaObject {
         this.windAreaL = windAreaL;
     }
     
-    public void setWindAreaL(Double beam, Double height, Double draught){
-        this.windAreaL = beam * (height - draught);
+        public void setWindAreaL() { //overidden in child method
+        this.windAreaL = 0.0;
     }
     
-
+  
     public Double getShapeCoef() {
         return shapeCoef;
     }
@@ -84,7 +88,6 @@ public class WindAreaObject {
         this.shapeCoef = shapeCoef;
     }
 
-   
     @Override
     public String toString() {
         return "WindAreaObject{" + "name=" + name + ", windAreaT=" + windAreaT + ", windAreaL=" + windAreaL + ", shapeCoef=" + shapeCoef + ", windForceT=" + windForceT + '}';
@@ -95,7 +98,7 @@ public class WindAreaObject {
     }
 
     public void setWindForceT(Double airDensity, Double windVelocity, Double g) {
-        this.windForceT = (0.5*airDensity*shapeCoef*windVelocity*windVelocity)/g*windAreaT;
+        this.windForceT = calculateWindForce(airDensity, windVelocity, g, windAreaT);
     }
 
     public Double getWindForceL() {
@@ -103,7 +106,13 @@ public class WindAreaObject {
     }
 
     public void setWindForceL(Double airDensity, Double windVelocity, Double g) {
-        this.windForceL = (0.5*airDensity*shapeCoef*windVelocity*windVelocity)/g*windAreaL;
+        this.windForceL = calculateWindForce(airDensity, windVelocity, g, windAreaL);
+    }
+    
+    
+    private Double calculateWindForce(Double airDensity, Double windVelocity, Double g, Double windArea){
+        Double force = (0.5*airDensity*shapeCoef*windVelocity*windVelocity)/g*windArea;
+        return force;
     }
    
 }

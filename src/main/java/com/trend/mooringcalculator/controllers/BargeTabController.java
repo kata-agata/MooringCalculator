@@ -79,10 +79,14 @@ public class BargeTabController {
         barge.setHeight(height);
         barge.setDraught(draught);
         barge.setShapeCoef(shape);
+        barge.setWindAreaL();
+        barge.setWindAreaT();
         
 //        Barge b = new Barge(name, length, beam, height, draught, shape);
         try {
-            forcesTabController.addBargeWindForceObject(barge);
+            System.out.println("barge contoller");
+            forcesTabController.setwindForcesTableViews(barge);
+            
         } catch (Exception e) {
             e.getMessage();
         }

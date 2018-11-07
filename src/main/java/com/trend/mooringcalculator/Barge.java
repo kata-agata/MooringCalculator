@@ -17,6 +17,8 @@ public final class Barge extends WindAreaObject {
     private Double height;
     private Double draught;
 
+
+
     private Barge() {
     }
 
@@ -68,6 +70,17 @@ public final class Barge extends WindAreaObject {
         this.draught = draught;
     }
 
+    @Override
+    public void setWindAreaT() {
+        
+        super.windAreaT = length*(height-draught);
+    }
+
+    @Override
+    public void setWindAreaL() {
+        super.windAreaL = beam*(height-draught);
+    }
+    
     @Override
     public String toString() {
         return "Barge{" + "name=" + getName() + "length=" + length + ", beam=" + beam + ", height=" + height + ", draught=" + draught + '}';
